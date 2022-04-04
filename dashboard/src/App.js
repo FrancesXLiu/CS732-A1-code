@@ -1,7 +1,24 @@
 import ReactEcharts from "echarts-for-react";
+import { useState, useEffect } from "react";
+import Papa from 'papaparse';
 import './App.css';
+import BarChart from "./charts/bar-chart";
 
 function App() {
+
+  const [parsedData, setParsedData] = useState([]); // parsed data from csv
+
+  useEffect(() => {
+    Papa.parse('/Video_Games_Sales_as_at_22_Dec_2016.csv', { // csv file is placed in public folder
+      download: true,
+      header: true,
+      complete: results => {
+        setParsedData(results.data);
+      }
+    })
+  }, []);
+
+  // console.log('Parsed data:', parsedData);
 
   const barOptions = {
     title: { text: 'bar chart' },
@@ -25,7 +42,8 @@ function App() {
       <main>
         <section className="column">
           <div id="barVertical">
-            <ReactEcharts option={barOptions} />
+            {/* <ReactEcharts option={barOptions} /> */}
+            <BarChart csvData={parsedData} />
           </div>
           <div id="barHorizontal">
             <ReactEcharts option={barOptions} />
