@@ -1,0 +1,36 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box; 
+}
+
+body {
+  background: url('./bg.png') no-repeat top center;
+}
+
+#header {
+  position: relative;
+}
+
+#header h1 {
+  font-size: 2rem;
+  color: white;
+  text-align: center;
+}
+
+main {
+  display: flex;
+  min-width: 1024px;
+  max-width: 1920px;
+  margin: 0 auto;
+  padding: 0.125rem 0.125rem 0;
+}
+
+.column {
+  flex: 3;
+}
+
+.column:nth-child(2) {
+  flex: 5;
+  margin: 0 0.125rem 0.1875rem;
+};
