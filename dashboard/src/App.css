@@ -6,11 +6,13 @@
 
 body {
   background: url('./bg.png') no-repeat top center;
+  overflow: hidden
 }
 
 #header {
   position: relative;
-  margin-bottom: 20px;
+  margin-bottom: 3vh;
+  margin-top: 2vh;
 }
 
 #header h1 {
@@ -35,3 +37,7 @@ main {
   flex: 5;
   margin: 0 0.125rem 0.1875rem;
 };
+
+#barHorizontal {
+  margin-top: 30px;
+}

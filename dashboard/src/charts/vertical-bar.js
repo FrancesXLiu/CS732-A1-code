@@ -1,8 +1,6 @@
 import EChartsReact from "echarts-for-react";
 
-const BarChart = ({ csvData }) => {
-
-    console.log('Parsed data:', csvData);
+const VerticalBar = ({ csvData }) => {
 
     let genreList = [];
     csvData.forEach(element => {
@@ -12,9 +10,6 @@ const BarChart = ({ csvData }) => {
             }
         }
     });
-    console.log('genreList:', genreList);
-
-    const regionList = ['EU_Sales', 'JP_Sales', 'NA_Sales', 'Other_Sales'];
 
     let data = { 'EU_Sales': [], 'JP_Sales': [], 'NA_Sales': [], 'Other_Sales': [] };
 
@@ -41,11 +36,12 @@ const BarChart = ({ csvData }) => {
         data['Other_Sales'].push(other);
     });
 
-    console.log('data:', data);
-
     const options = {
         title: {
-            text: 'Sales Per Genre by Regions'
+            text: 'Sales Per Genre by Regions',
+            textStyle: {
+                color: '#ffffff',
+            }
         },
         tooltip: {
             trigger: 'axis',
@@ -53,13 +49,30 @@ const BarChart = ({ csvData }) => {
                 type: 'shadow'
             }
         },
-        legend: {},
+        legend: {
+            y: 'bottom',
+            padding: [0, 0, 10, 0],
+            textStyle: {
+                color: '#ffffff',
+            },
+            type: 'scroll',
+            pageIconColor: '#ffffff',
+            pageTextStyle: {
+                color: '#ffffff',
+            }
+        },
         xAxis: [{
             type: 'category',
             data: genreList,
+            axisLabel: {
+                color: '#ffffff',
+            }
         }],
         yAxis: [{
             type: 'value',
+            axisLabel: {
+                color: '#ffffff',
+            }
         }],
         series: [
             {
@@ -103,9 +116,9 @@ const BarChart = ({ csvData }) => {
 
     return (
         <div>
-            <EChartsReact option={options}/>
+            <EChartsReact option={options} style={{height: '40vh', width: '30vw'}}/>
         </div>
     );
 };
 
-export default BarChart;
+export default VerticalBar;

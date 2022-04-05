@@ -2,7 +2,11 @@ import ReactEcharts from "echarts-for-react";
 import { useState, useEffect } from "react";
 import Papa from 'papaparse';
 import './App.css';
-import BarChart from "./charts/bar-chart";
+import VerticalBar from "./charts/vertical-bar";
+import HorizontalBar from "./charts/horizontal-bar";
+import Nightingale from "./charts/nightingale";
+import AnimatedText from "./charts/animated-text";
+import LineChart from "./charts/line-chart";
 
 function App() {
 
@@ -42,24 +46,23 @@ function App() {
       <main>
         <section className="column">
           <div id="barVertical">
-            {/* <ReactEcharts option={barOptions} /> */}
-            <BarChart csvData={parsedData} />
+            <VerticalBar csvData={parsedData} />
           </div>
           <div id="barHorizontal">
-            <ReactEcharts option={barOptions} />
+            <HorizontalBar csvData={parsedData} />
           </div>
         </section>
         <section className="column">
           <div id="nightingale">
-            <ReactEcharts option={barOptions} />
+            <Nightingale csvData={parsedData} />
           </div>
           <div id="text">
-            <ReactEcharts option={barOptions} />
+            <AnimatedText />
           </div>
         </section>
         <section className="column">
           <div id="line">
-            <ReactEcharts option={barOptions} />
+            <LineChart csvData={parsedData} />
           </div>
           <div id="sunburst">
             <ReactEcharts option={barOptions} />
