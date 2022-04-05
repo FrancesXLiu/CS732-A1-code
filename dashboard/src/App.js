@@ -7,6 +7,7 @@ import HorizontalBar from "./charts/horizontal-bar";
 import Nightingale from "./charts/nightingale";
 import AnimatedText from "./charts/animated-text";
 import LineChart from "./charts/line-chart";
+import Sunburst from "./charts/sunburst";
 
 function App() {
 
@@ -21,22 +22,6 @@ function App() {
       }
     })
   }, []);
-
-  // console.log('Parsed data:', parsedData);
-
-  const barOptions = {
-    title: { text: 'bar chart' },
-    tooltip: {},
-    xAxis: {
-      data: ['ps4', 'xbox', 'switch', 'pc']
-    },
-    yAxis: {},
-    series: [{
-      name: 'sales',
-      type: 'bar',
-      data: [5, 20, 36, 10]
-    }]
-  };
 
   return (
     <div className="App">
@@ -65,7 +50,7 @@ function App() {
             <LineChart csvData={parsedData} />
           </div>
           <div id="sunburst">
-            <ReactEcharts option={barOptions} />
+            <Sunburst csvData={parsedData} />
           </div>
         </section>
       </main>
