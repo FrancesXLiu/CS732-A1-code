@@ -1,4 +1,3 @@
-import ReactEcharts from "echarts-for-react";
 import { useState, useEffect } from "react";
 import Papa from 'papaparse';
 import './App.css';

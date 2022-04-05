@@ -8,4 +8,4 @@ You need the yarn command to set up this website. If you don't already have yarn
 
 ## Repo Content
 The dashboard folder consists a data visualisation dashboard written using React and ECharts. <br/>
-The [] folder...
+The simple-bar-chart folder consists a single html file that shows a very simple bar chart (no React used).

@@ -1,0 +1,44 @@
+<!-- A very simple bar chart example (without using React) -->
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Simple Bar Chart</title>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/echarts/5.3.2/echarts.min.js"></script>
+    </head>
+
+    <body>
+        <!-- We need a Dom that has width and height specified for the ECharts chart -->
+        <div id="main" style="width: 1500px; height: 650px"></div> 
+
+        <script type="text/javascript">
+
+            // Initialize the instance of ECharts inside the the Dom that we prepared above.
+            const barChart = echarts.init(document.getElementById('main'));
+
+            // Set up the configs and data of the bar chart
+            const option = {
+                title: {
+                    text: 'Simple Bar Chart'
+                },
+                tooltip: {},
+                xAxis: {
+                    data: ["Product 1", "Product 2", "Product 3", "Product 4", "Product 5"]
+                },
+                yAxis: {},
+                series: [{
+                    name: 'Sales',
+                    type: 'bar',
+                    data: [5, 20, 36, 10, 10],
+                    colorBy: 'data'
+                }]
+            };
+
+            // Load the configs and data into the ECharts instance
+            barChart.setOption(option);
+
+        </script>
+
+    </body>
+</html>
