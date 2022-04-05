@@ -42,6 +42,10 @@ const Nightingale = ({ csvData }) => {
             }
         },
         legend: {show: false},
+        tooltip: {
+            trigger: 'item',
+            formatter: '{b}: {c} ({d}%)'
+        },
         toolbox: {
             show: false,
         },
