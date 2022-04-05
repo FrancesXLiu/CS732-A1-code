@@ -22,7 +22,6 @@ const Sunburst = ({ csvData }) => {
         });
         data[genreList.indexOf(genre)].children = children;
     });
-    console.log('data: ', data);
 
     const options = {
         title: {
