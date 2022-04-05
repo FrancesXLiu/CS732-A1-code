@@ -1,7 +1,7 @@
 * {
   margin: 0;
   padding: 0;
-  box-sizing: border-box; 
+  box-sizing: border-box;
 }
 
 body {
@@ -11,14 +11,15 @@ body {
 
 #header {
   position: relative;
-  margin-bottom: 3vh;
-  margin-top: 2vh;
+  margin-bottom: 4vh;
+  margin-top: 3vh;
 }
 
 #header h1 {
-  font-size: 2rem;
+  font-size: 5vh;
   color: white;
   text-align: center;
+  text-shadow: 0.3vw 0.6vh #5d5d5d
 }
 
 main {
@@ -36,7 +37,9 @@ main {
 .column:nth-child(2) {
   flex: 5;
   margin: 0 0.125rem 0.1875rem;
-};
+}
+
+;
 
 #barHorizontal {
   margin-top: 30px;
